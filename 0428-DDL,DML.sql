@@ -41,7 +41,7 @@ alter table userlist drop (no, gender);
 
 -- 5. datatype 변경
 alter table userlist modify phone number; --컬럼에 데이터가 없었을 경우 타입 변경이 가능하다.--
-alter table userlist modify no date;  -- 비어 있지 않은 경우는 데이터 타입 변경이 불가능하다. 비우고 실행--
+alter table userlist modify no date;  -- 비어 있지 않은 경우는 데이터 타입 변경이 불가능하다. null 처리하거나 비우고 실행--
 
 -- 비우는 방법
 update userlist set no = '';
