@@ -251,7 +251,7 @@ select * from professor;
 
 --평균 구하기
 
-select  count(name), count(bonus), -- => 총 레코드수(null값은 제외함)
+select  count(name), count(bonus), -- => 총 레코드수(null값은 제외함) 
     avg(pay), avg(bonus)  -- 평균(null 값은 제외하고 나눔)
     from professor;
     
