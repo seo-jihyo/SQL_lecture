@@ -7,7 +7,7 @@ insert into dept2 (dcode, dname, pdept, area)
  desc dept2;
  
  insert into professor (profno, name, id, position, pay, hiredate)
- values (5001, '김설희', 'Love_me','정교수',510, '2011/11/14');
+ values (5001, '김설희', 'Love_me','정교수',510, '2011/11/14'); 
  
  insert all
  into p_01 values (profno, name)
