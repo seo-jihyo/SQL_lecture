@@ -171,14 +171,16 @@ select empno 사원번호, ename 이름, sal 급여
 from emp
  -- where 이름 = 'FORD'; -- 별칭으로 조건 안 됨
 order by 급여 desc;      -- 별칭으로 정렬은 된다
-
+________________________________________________________________________________
 --문제1] c_emp_20 c_emp4 union 결과
 select * from c_emp_20
     UNION
     select * from c_emp4;
+    
 --문제2] 사원번호, 이름, 급여 그리고 15% 인상된 급여를 정수로 표시하되 컬럼명을 New Salary
 select * from emp;
-select empno, ename, sal, (sal*1.5) "New Salary" from emp;
+select empno, ename, sal, cast(sal*1.5 as int) as"New Salary" from emp;
+
 --문제3] 2번 문제와 동일한 데이터에서 급여 인상분 
 --      (새 급여에서 이전 급여를 뺀 값을 추가해 출력 컬럼명 increase)
 select empno, ename, sal, (sal*1.5) "New Salary", (sal*1.5)-sal "increase" from emp;
@@ -187,13 +189,15 @@ select empno, ename, sal, (sal*1.5) "New Salary", (sal*1.5)-sal "increase" from 
 -- 컬럼명을 Months_Works로 지정하고 근무 달수를 기준으로 오래된 사람부터 정렬해 출력
 select * from emp;
 select ename, hiredate, 
-ROUND(MONTHS_BETWEEN(sysdate, hiredate)) Months_Works 
+floor(MONTHS_BETWEEN(sysdate, hiredate)) Months_Works 
 from emp
 order by Months_Works  desc ;
 
 
 --문제5] 사원의 이름과 커미션을 출력하되 커미션이 책정되지 않은 사원의 커미션은 
 --'no commission'으로 출력
+--decode 사용
 select ename,DECODE(comm, NULL, 'no commission', comm) AS comm 
 from emp;
-where
+-- nvl 사용
+select ename, nvl(to_char(comm), 'no commission') as comm from emp;
