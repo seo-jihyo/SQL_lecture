@@ -4,7 +4,11 @@ grant connect, resource to jihyo;
 
 alter user jihyo default tablespace users quota unlimited on users;
 
+GRANT CREATE ANY TABLE TO jihyo;
 
+
+
+________________________________________________________
 create user mango identified by oracle account unlock;
 grant connect, resource to mango;
 
