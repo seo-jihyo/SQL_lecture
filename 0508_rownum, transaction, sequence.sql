@@ -135,6 +135,6 @@ end;
 
 
 
-select * from c_emp100;
+select * from c_emp100;y
 
 
