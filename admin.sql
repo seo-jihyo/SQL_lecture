@@ -15,3 +15,5 @@ grant connect, resource to mango;
 alter user mango default tablespace users quota unlimited on users;
 ________________________________________________________________________
 
+grant execute any procedure to jihyo;
+grant create procedure to jihyo;

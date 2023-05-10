@@ -35,7 +35,7 @@ End;
 ----------------------------------------------------
 desc emp
 
-declare data emp%rowtype;
+declare data emp%rowtype; --이 테이블이 가지고 있는 모든 row(type)을 담아옴
 begin
     select * into data from emp where empno = '7788';
     dbms_output.put_line(data.ename||',' ||data.job||','||data.mgr||','||data.deptno);
@@ -45,10 +45,10 @@ begin
 -- 제어문의 종류 if, for, while
 /*if문
 IF 조건식 THEN 실행문장;
-ELSIF 조건식 THEN 실행문장;
-ELSIF 조건식 THEN 실행문장;
-....
-ELSE 실행문장;
+    ELSIF 조건식 THEN 실행문장;
+    ELSIF 조건식 THEN 실행문장;
+    ....
+    ELSE 실행문장;
 END IF;
 */
 
